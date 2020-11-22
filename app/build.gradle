@@ -1,0 +1,17 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply from: '../config.gradle'
+
+android {
+    defaultConfig {
+        applicationId "com.github.baraja.anvilpreview"
+   }
+}
+
+dependencies {
+    implementation project(":base")
+    implementation project(":feature_joke")
+}

@@ -1,0 +1,9 @@
+plugins {
+    id 'com.android.library'
+}
+
+apply from: '../config.gradle'
+
+dependencies {
+    implementation project(":base")
+}

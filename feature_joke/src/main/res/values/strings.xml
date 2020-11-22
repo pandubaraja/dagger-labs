@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feature_joke_fetch_button">
+        <item>Another?</item>
+        <item>Give Me More!</item>
+        <item>Moreeee!</item>
+        <item>What is this button?</item>
+        <item>Press Me I Dare You</item>
+        <item>Do not press me :(</item>
+        <item>Just Dont</item>
+        <item>Satisfy My Receh Joke Hunger!</item>
+        <item>Who are you?</item>
+        <item>Next?</item>
+    </string-array>
+</resources>
