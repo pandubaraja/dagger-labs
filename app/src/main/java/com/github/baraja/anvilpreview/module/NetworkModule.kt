@@ -12,8 +12,8 @@ import java.util.concurrent.TimeUnit
 @Module
 class NetworkModule {
 
-    @Provides
     @CoreScope
+    @Provides
     fun providesOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(5000, TimeUnit.MILLISECONDS)
@@ -26,8 +26,8 @@ class NetworkModule {
             .build()
     }
 
-    @Provides
     @CoreScope
+    @Provides
     fun providesRetrofitBuilder(okHttpClient: OkHttpClient): Retrofit.Builder {
         return Retrofit.Builder()
             .client(okHttpClient)
