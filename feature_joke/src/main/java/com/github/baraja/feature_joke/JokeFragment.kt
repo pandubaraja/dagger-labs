@@ -1,6 +1,5 @@
 package com.github.baraja.feature_joke
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.github.baraja.base.viewModelOf
 import com.github.baraja.feature_joke.databinding.FragmentJokeBinding
-import com.github.baraja.feature_joke.di.JokeUiState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
