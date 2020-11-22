@@ -1,8 +1,9 @@
 package com.github.baraja.anvilpreview.module
 
-import com.github.baraja.base.scope.CoreScope
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -10,9 +11,9 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 @Module
+@InstallIn(ApplicationComponent::class)
 class NetworkModule {
 
-    @CoreScope
     @Provides
     fun providesOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
@@ -26,7 +27,6 @@ class NetworkModule {
             .build()
     }
 
-    @CoreScope
     @Provides
     fun providesRetrofitBuilder(okHttpClient: OkHttpClient): Retrofit.Builder {
         return Retrofit.Builder()

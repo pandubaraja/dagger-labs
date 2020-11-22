@@ -5,17 +5,9 @@ plugins {
 apply from: '../config.gradle'
 
 dependencies {
-    api libraries.core
-    api libraries.kotlinCoroutine
-    api libraries.recyclerView
-    api libraries.constraintLayout
-    api libraries.lifecycle
-    api libraries.material
-    api libraries.dagger
     api libraries.retrofit
     api libraries.okhttp
     api libraries.okhttpInterceptor
     api libraries.moshi
     api libraries.moshiConverter
-    api libraries.coil
 }

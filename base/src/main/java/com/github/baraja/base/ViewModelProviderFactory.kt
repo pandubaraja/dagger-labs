@@ -2,9 +2,6 @@ package com.github.baraja.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.github.baraja.base.scope.CoreScope
-import javax.inject.Inject
-import javax.inject.Provider
 
 class ViewModelProviderFactory(private val viewModel: ViewModel) : ViewModelProvider.Factory {
 

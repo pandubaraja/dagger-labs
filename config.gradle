@@ -1,6 +1,8 @@
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'dagger.hilt.android.plugin'
+
 android {
     compileSdkVersion versions.compiledSdkVersion
 
@@ -26,7 +28,20 @@ android {
 }
 
 dependencies {
-    kapt libraries.daggerCompiler
     implementation libraries.kotlin
     implementation libraries.appCompat
+    implementation libraries.recyclerView
+    implementation libraries.constraintLayout
+    implementation libraries.core
+    implementation libraries.kotlinCoroutine
+    implementation libraries.lifecycle
+    implementation libraries.material
+    implementation libraries.coil
+
+    implementation libraries.hilt
+    kapt libraries.hiltCompiler
+}
+
+kapt {
+    correctErrorTypes true
 }

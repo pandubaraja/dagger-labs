@@ -20,6 +20,8 @@ ext {
             moshi               : '1.1.0',
             moshiConverter      : '2.4.0',
             coil                : '1.0.0',
+
+            hilt                : '2.28-alpha',
     ]
     libraries = [
             kotlin              : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlinVersion",
@@ -38,5 +40,7 @@ ext {
             moshi               : "com.squareup.moshi:moshi:$versions.moshi",
             moshiConverter      : "com.squareup.retrofit2:converter-moshi:$versions.moshiConverter",
             coil                : "io.coil-kt:coil:$versions.coil",
+            hilt                : "com.google.dagger:hilt-android:$versions.hilt",
+            hiltCompiler        : "com.google.dagger:hilt-android-compiler:$versions.hilt",
     ]
 }

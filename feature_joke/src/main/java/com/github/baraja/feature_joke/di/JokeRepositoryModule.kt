@@ -1,15 +1,16 @@
-package com.github.baraja.anvilpreview.module
+package com.github.baraja.feature_joke.di
 
-import com.github.baraja.base.scope.CoreScope
 import com.github.baraja.feature_joke.data.JokeRepository
 import com.github.baraja.feature_joke.data.JokeRepositoryContract
 import dagger.Binds
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 
 @Module
-abstract class RepositoryModule {
+@InstallIn(ApplicationComponent::class)
+abstract class JokeRepositoryModule {
 
-    @CoreScope
     @Binds
     abstract fun bindJokeRepositoryContract(jokeRepository: JokeRepository): JokeRepositoryContract
 }

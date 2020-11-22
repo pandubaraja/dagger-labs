@@ -10,11 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.github.baraja.base.viewModelOf
 import com.github.baraja.feature_joke.databinding.FragmentJokeBinding
-import com.github.baraja.feature_joke.di.JokeComponentProvider
 import com.github.baraja.feature_joke.di.JokeUiState
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class JokeFragment: Fragment() {
 
     companion object {
@@ -28,11 +29,6 @@ class JokeFragment: Fragment() {
     private val jokeViewModel by lazy { viewModelOf<JokeViewModel>(viewModelProvider) }
 
     private var binding: FragmentJokeBinding? = null
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        (activity?.application as JokeComponentProvider).provideJokeComponent().inject(this)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
