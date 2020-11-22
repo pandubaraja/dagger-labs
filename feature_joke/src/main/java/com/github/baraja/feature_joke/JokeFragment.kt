@@ -75,7 +75,7 @@ class JokeFragment: Fragment() {
                             }
 
                             val stringArray = resources.getStringArray(R.array.feature_joke_fetch_button)
-                            btnFetch.text = stringArray[(0..stringArray.size).random()]
+                            btnFetch.text = stringArray[(stringArray.indices).random()]
                             btnFetch.visibility = View.VISIBLE
                         }
                         is JokeUiState.Error -> {
