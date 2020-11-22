@@ -1,22 +1,31 @@
 package com.github.baraja.anvilpreview
 
-import com.github.baraja.anvilpreview.module.ApiModule
-import com.github.baraja.anvilpreview.module.NetworkModule
-import com.github.baraja.anvilpreview.module.RepositoryModule
-import com.github.baraja.anvilpreview.module.SubComponentsModule
+import android.app.Application
+import com.github.baraja.anvilpreview.module.*
 import com.github.baraja.base.scope.CoreScope
-import com.github.baraja.feature_joke.di.JokeComponent
+import dagger.BindsInstance
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 
 @CoreScope
-@Component(modules = [
-    NetworkModule::class,
-    SubComponentsModule::class,
-    ApiModule::class,
-    RepositoryModule::class
-])
+@Component(
+    modules = [
+        AndroidInjectionModule::class,
+        NetworkModule::class,
+        ApiModule::class,
+        RepositoryModule::class,
+        ActivityBuilder::class,
+        FragmentBuilder::class
+    ]
+)
 interface AppComponent {
 
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun application(application: Application): Builder
+        fun build(): AppComponent
+    }
 
-    fun getJokeComponent(): JokeComponent.Factory
+    fun inject(app: App)
 }

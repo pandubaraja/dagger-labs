@@ -38,5 +38,8 @@ ext {
             moshi               : "com.squareup.moshi:moshi:$versions.moshi",
             moshiConverter      : "com.squareup.retrofit2:converter-moshi:$versions.moshiConverter",
             coil                : "io.coil-kt:coil:$versions.coil",
+            daggerAndroid       : "com.google.dagger:dagger-android:$versions.dagger",
+            daggerProcessor     : "com.google.dagger:dagger-android-processor:$versions.dagger",
+            daggerSupport       : "com.google.dagger:dagger-android-support:$versions.dagger",
     ]
 }

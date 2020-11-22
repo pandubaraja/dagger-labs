@@ -1,16 +1,24 @@
 package com.github.baraja.anvilpreview
 
 import com.github.baraja.base.BaseApp
-import com.github.baraja.feature_joke.di.JokeComponent
-import com.github.baraja.feature_joke.di.JokeComponentProvider
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import javax.inject.Inject
 
-class App: BaseApp(), JokeComponentProvider {
+class App: BaseApp(), HasAndroidInjector {
 
-    private val _appComponent: AppComponent by lazy {
-        DaggerAppComponent.create()
+    @Inject
+    lateinit var androidInjector: DispatchingAndroidInjector<Any>
+
+    override fun onCreate() {
+        super.onCreate()
+
+        DaggerAppComponent.builder()
+            .application(this)
+            .build()
+            .inject(this)
     }
 
-    override fun provideJokeComponent(): JokeComponent {
-        return _appComponent.getJokeComponent().create()
-    }
+    override fun androidInjector(): AndroidInjector<Any> = androidInjector
 }

@@ -18,4 +18,6 @@ dependencies {
     api libraries.moshi
     api libraries.moshiConverter
     api libraries.coil
+    api libraries.daggerAndroid
+    api libraries.daggerSupport
 }

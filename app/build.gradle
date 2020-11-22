@@ -14,4 +14,6 @@ android {
 dependencies {
     implementation project(":base")
     implementation project(":feature_joke")
+
+    kapt libraries.daggerProcessor
 }

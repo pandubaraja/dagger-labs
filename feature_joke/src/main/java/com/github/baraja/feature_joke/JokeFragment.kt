@@ -10,17 +10,24 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.github.baraja.base.viewModelOf
 import com.github.baraja.feature_joke.databinding.FragmentJokeBinding
-import com.github.baraja.feature_joke.di.JokeComponentProvider
 import com.github.baraja.feature_joke.di.JokeUiState
+import dagger.android.AndroidInjection
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import dagger.android.support.AndroidSupportInjection
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
-class JokeFragment: Fragment() {
+class JokeFragment: Fragment(), HasAndroidInjector {
 
     companion object {
         val TAG = JokeFragment::class.java.name
         fun newInstance() = JokeFragment()
     }
+
+    @Inject
+    lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     @Inject
     lateinit var viewModelProvider: ViewModelProvider.Factory
@@ -29,9 +36,11 @@ class JokeFragment: Fragment() {
 
     private var binding: FragmentJokeBinding? = null
 
+    override fun androidInjector(): AndroidInjector<Any> = androidInjector
+
     override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
         super.onAttach(context)
-        (activity?.application as JokeComponentProvider).provideJokeComponent().inject(this)
     }
 
     override fun onCreateView(
