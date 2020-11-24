@@ -1,4 +1,4 @@
-package com.github.baraja.feature_joke.di
+package com.github.baraja.feature_joke
 
 import com.github.baraja.feature_joke.data.JokeEntity
 

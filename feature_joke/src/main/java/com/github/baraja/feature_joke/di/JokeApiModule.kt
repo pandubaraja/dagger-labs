@@ -1,15 +1,17 @@
-package com.github.baraja.anvilpreview.module
+package com.github.baraja.feature_joke.di
 
-import com.github.baraja.base.scope.CoreScope
+import com.github.baraja.base.scope.AppScope
 import com.github.baraja.feature_joke.data.JokeApi
+import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 
 @Module
-class ApiModule {
+@ContributesTo(AppScope::class)
+class JokeApiModule {
 
-    @CoreScope
+    @AppScope
     @Provides
     fun providesJokeApi(retrofitBuilder: Retrofit.Builder): JokeApi {
         return retrofitBuilder

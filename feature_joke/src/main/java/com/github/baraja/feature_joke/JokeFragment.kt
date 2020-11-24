@@ -11,7 +11,6 @@ import androidx.lifecycle.lifecycleScope
 import com.github.baraja.base.viewModelOf
 import com.github.baraja.feature_joke.databinding.FragmentJokeBinding
 import com.github.baraja.feature_joke.di.JokeComponentProvider
-import com.github.baraja.feature_joke.di.JokeUiState
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 

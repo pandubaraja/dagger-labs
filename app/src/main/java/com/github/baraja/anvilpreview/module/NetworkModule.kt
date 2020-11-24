@@ -1,6 +1,7 @@
 package com.github.baraja.anvilpreview.module
 
-import com.github.baraja.base.scope.CoreScope
+import com.github.baraja.base.scope.AppScope
+import com.squareup.anvil.annotations.ContributesTo
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -10,9 +11,10 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 @Module
+@ContributesTo(AppScope::class)
 class NetworkModule {
 
-    @CoreScope
+    @AppScope
     @Provides
     fun providesOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
@@ -26,7 +28,7 @@ class NetworkModule {
             .build()
     }
 
-    @CoreScope
+    @AppScope
     @Provides
     fun providesRetrofitBuilder(okHttpClient: OkHttpClient): Retrofit.Builder {
         return Retrofit.Builder()

@@ -2,7 +2,6 @@ package com.github.baraja.feature_joke
 
 import androidx.lifecycle.ViewModel
 import com.github.baraja.feature_joke.data.JokeRepositoryContract
-import com.github.baraja.feature_joke.di.JokeUiState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
